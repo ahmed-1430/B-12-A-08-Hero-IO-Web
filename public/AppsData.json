@@ -1,0 +1,272 @@
+[
+  {
+    "image": "https://i.ibb.co.com/TM1vsqKR/whatsapp-logo-png-green-square.png",
+    "title": "WhatsApp Messenger",
+    "companyName": "WhatsApp Inc",
+    "id": 1,
+    "description": "Simple. Reliable. Private messaging and calling for free.",
+    "size": 152,
+    "reviews": 12543000,
+    "ratingAvg": 4.2,
+    "downloads": 5000000000,
+    "ratings": [
+      { "name": "1 star", "count": 850000 },
+      { "name": "2 star", "count": 420000 },
+      { "name": "3 star", "count": 630000 },
+      { "name": "4 star", "count": 2510000 },
+      { "name": "5 star", "count": 8740000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/9kMQbqWg/instagram.jpg",
+    "title": "Instagram",
+    "companyName": "Instagram",
+    "id": 2,
+    "description": "Connect with friends, share photos and videos, and discover amazing content.",
+    "size": 218,
+    "reviews": 9876500,
+    "ratingAvg": 4.1,
+    "downloads": 4000000000,
+    "ratings": [
+      { "name": "1 star", "count": 690000 },
+      { "name": "2 star", "count": 520000 },
+      { "name": "3 star", "count": 810000 },
+      { "name": "4 star", "count": 2890000 },
+      { "name": "5 star", "count": 4965000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/prjTgwyP/Spotify-logo-without-text-svg.png",
+    "title": "Spotify: Music and Podcasts",
+    "companyName": "Spotify AB",
+    "id": 3,
+    "description": "Listen to music and podcasts you love. Find new music and podcasts to discover.",
+    "size": 187,
+    "reviews": 4567800,
+    "ratingAvg": 4.5,
+    "downloads": 1000000000,
+    "ratings": [
+      { "name": "1 star", "count": 120000 },
+      { "name": "2 star", "count": 98000 },
+      { "name": "3 star", "count": 245000 },
+      { "name": "4 star", "count": 856000 },
+      { "name": "5 star", "count": 3250000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/4Rv328kT/Netflix-new-icon.png",
+    "title": "Netflix",
+    "companyName": "Netflix, Inc.",
+    "id": 4,
+    "description": "Watch TV shows and movies recommended just for you, including award-winning Netflix original series.",
+    "size": 276,
+    "reviews": 3456700,
+    "ratingAvg": 4.3,
+    "downloads": 1500000000,
+    "ratings": [
+      { "name": "1 star", "count": 156000 },
+      { "name": "2 star", "count": 89000 },
+      { "name": "3 star", "count": 287000 },
+      { "name": "4 star", "count": 956000 },
+      { "name": "5 star", "count": 1968000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/hRj1NtML/uber.png",
+    "title": "Uber - Request a ride",
+    "companyName": "Uber Technologies, Inc.",
+    "id": 5,
+    "description": "Tap the button and get a ride in minutes. The official Uber app.",
+    "size": 324,
+    "reviews": 2345600,
+    "ratingAvg": 4.0,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 287000 },
+      { "name": "2 star", "count": 156000 },
+      { "name": "3 star", "count": 324000 },
+      { "name": "4 star", "count": 689000 },
+      { "name": "5 star", "count": 885000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/840cSWxP/tiktok.png",
+    "title": "TikTok - Videos, Music & LIVE",
+    "companyName": "TikTok Pte. Ltd.",
+    "id": 6,
+    "description": "TikTok is THE destination for mobile videos. Watch, create, and discover content.",
+    "size": 412,
+    "reviews": 5678900,
+    "ratingAvg": 4.2,
+    "downloads": 2000000000,
+    "ratings": [
+      { "name": "1 star", "count": 456000 },
+      { "name": "2 star", "count": 289000 },
+      { "name": "3 star", "count": 567000 },
+      { "name": "4 star", "count": 1456000 },
+      { "name": "5 star", "count": 2910000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/twWpPz8f/zoom-logo.webp",
+    "title": "Zoom - One Platform to Connect",
+    "companyName": "Zoom Video Communications, Inc.",
+    "id": 7,
+    "description": "Zoom brings video communications, online meetings, and group messaging into one easy-to-use platform.",
+    "size": 298,
+    "reviews": 1234500,
+    "ratingAvg": 4.6,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 45000 },
+      { "name": "2 star", "count": 32000 },
+      { "name": "3 star", "count": 78000 },
+      { "name": "4 star", "count": 256000 },
+      { "name": "5 star", "count": 860000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Gfw58zdy/Slack-icon-2019-svg.png",
+    "title": "Slack",
+    "companyName": "Slack Technologies, Inc.",
+    "id": 8,
+    "description": "Slack brings team communication and collaboration into one place so you can get more work done.",
+    "size": 245,
+    "reviews": 987600,
+    "ratingAvg": 4.4,
+    "downloads": 100000000,
+    "ratings": [
+      { "name": "1 star", "count": 34000 },
+      { "name": "2 star", "count": 28000 },
+      { "name": "3 star", "count": 89000 },
+      { "name": "4 star", "count": 256000 },
+      { "name": "5 star", "count": 571000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/Fbx2bjcG/duolingo.png",
+    "title": "Duolingo - Language Lessons",
+    "companyName": "Duolingo",
+    "id": 9,
+    "description": "Learn a new language with the world's most-downloaded education app!",
+    "size": 156,
+    "reviews": 876500,
+    "ratingAvg": 4.7,
+    "downloads": 500000000,
+    "ratings": [
+      { "name": "1 star", "count": 23000 },
+      { "name": "2 star", "count": 18000 },
+      { "name": "3 star", "count": 45000 },
+      { "name": "4 star", "count": 187000 },
+      { "name": "5 star", "count": 603000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/9kv4H5Xy/head-space.png",
+    "title": "Headspace: Mindful Meditation",
+    "companyName": "Headspace Inc.",
+    "id": 10,
+    "description": "Stress less, sleep soundly, and get happier. Meditation made simple with Headspace.",
+    "size": 189,
+    "reviews": 654300,
+    "ratingAvg": 4.8,
+    "downloads": 50000000,
+    "ratings": [
+      { "name": "1 star", "count": 12000 },
+      { "name": "2 star", "count": 8000 },
+      { "name": "3 star", "count": 23000 },
+      { "name": "4 star", "count": 145000 },
+      { "name": "5 star", "count": 466000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/zH6cMWBM/spotify-kids-2021-02-12.webp",
+    "title": "Spotify Kids",
+    "companyName": "Spotify AB",
+    "id": 11,
+    "description": "A safe, playful, and ad-free music experience for kids.",
+    "size": 167,
+    "reviews": 234500,
+    "ratingAvg": 4.3,
+    "downloads": 10000000,
+    "ratings": [
+      { "name": "1 star", "count": 15000 },
+      { "name": "2 star", "count": 12000 },
+      { "name": "3 star", "count": 34000 },
+      { "name": "4 star", "count": 68000 },
+      { "name": "5 star", "count": 105000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/zVPxkwbB/Notion-app-logo.png",
+    "title": "Notion - notes, docs, tasks",
+    "companyName": "Notion Labs, Inc.",
+    "id": 12,
+    "description": "A unified workspace for your notes, tasks, wikis, and databases.",
+    "size": 278,
+    "reviews": 543200,
+    "ratingAvg": 4.5,
+    "downloads": 30000000,
+    "ratings": [
+      { "name": "1 star", "count": 18000 },
+      { "name": "2 star", "count": 15000 },
+      { "name": "3 star", "count": 45000 },
+      { "name": "4 star", "count": 156000 },
+      { "name": "5 star", "count": 309000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/jZLF12QW/canva-png.png",
+    "title": "Canva: Design, Photo & Video",
+    "companyName": "Canva",
+    "id": 13,
+    "description": "Create stunning social media posts, presentations, posters, videos, logos and more.",
+    "size": 312,
+    "reviews": 765400,
+    "ratingAvg": 4.7,
+    "downloads": 100000000,
+    "ratings": [
+      { "name": "1 star", "count": 21000 },
+      { "name": "2 star", "count": 16000 },
+      { "name": "3 star", "count": 43000 },
+      { "name": "4 star", "count": 187000 },
+      { "name": "5 star", "count": 498000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/HL2JYPR2/calm-logo.png",
+    "title": "Calm - Sleep, Meditate, Relax",
+    "companyName": "Calm.com, Inc.",
+    "id": 14,
+    "description": "Calm is the #1 app for sleep, meditation and relaxation.",
+    "size": 201,
+    "reviews": 432100,
+    "ratingAvg": 4.8,
+    "downloads": 50000000,
+    "ratings": [
+      { "name": "1 star", "count": 9000 },
+      { "name": "2 star", "count": 7000 },
+      { "name": "3 star", "count": 21000 },
+      { "name": "4 star", "count": 123000 },
+      { "name": "5 star", "count": 271000 }
+    ]
+  },
+  {
+    "image": "https://i.ibb.co.com/C3Z6vd61/discord-logo.png",
+    "title": "Discord - Talk, Chat & Hang Out",
+    "companyName": "Discord Inc.",
+    "id": 15,
+    "description": "Discord is the easiest way to talk over voice, video, and text with your friends and communities.",
+    "size": 289,
+    "reviews": 987600,
+    "ratingAvg": 4.2,
+    "downloads": 150000000,
+    "ratings": [
+      { "name": "1 star", "count": 56000 },
+      { "name": "2 star", "count": 43000 },
+      { "name": "3 star", "count": 98000 },
+      { "name": "4 star", "count": 256000 },
+      { "name": "5 star", "count": 534000 }
+    ]
+  }
+]
