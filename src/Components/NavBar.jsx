@@ -19,7 +19,7 @@ const NavBar = () => {
                             <li><Link>Installation</Link></li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost text-xl"><img src={logo} className='h-10' alt="logo" />daisyUI</Link>
+                    <Link className="btn btn-ghost text-xl font-bold"><img src={logo} className='h-10' alt="logo" />HERO.IO</Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
