@@ -2,14 +2,14 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 
 const AllApps = () => {
-    const [products, setProducts] = useState([])
+    const [apps, setApps] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     useEffect(() => {
         setLoading(true)
         axios('../AppsData.json')
             .then(data => {
-                setProducts(data.data)
+                setApps(data.data)
                 setLoading(false)
             })
             .catch(err => {
@@ -17,6 +17,6 @@ const AllApps = () => {
                 setLoading(false)
             })
     }, [])
-    return { products, loading, error }
+    return { apps, loading, error }
 }
 export default AllApps

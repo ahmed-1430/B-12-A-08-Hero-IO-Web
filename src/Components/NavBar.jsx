@@ -29,7 +29,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link className="btn flex items-center bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white font-semibold"><FaGithub size={20} />Contribute</Link>
+                    <Link to={'https://github.com/ahmed-1430'} target='_blank' className="btn flex items-center bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white font-semibold"><FaGithub size={20} />Contribute</Link>
                 </div>
             </div>
         </div>
