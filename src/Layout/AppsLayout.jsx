@@ -1,11 +1,9 @@
 import React from 'react';
-import { Outlet } from 'react-router';
 import NavBar from '../Components/NavBar';
-import Banner from '../Components/Banner';
-import TrendingApps from '../Components/TrendingApps';
+import { Outlet } from 'react-router';
 import Footer from '../Components/Footer';
 
-const HomeLayout = () => {
+const AppsLayout = () => {
     return (
         <div>
             <header>
@@ -14,12 +12,6 @@ const HomeLayout = () => {
                 </nav>
             </header>
             <main>
-            <section className='bg-[#f5f5f5]'>
-                <Banner></Banner>
-            </section>
-            <section className='bg-[#f5f5f5]'>
-                <TrendingApps></TrendingApps>
-            </section>
                 <Outlet></Outlet>
                 <section>
                     <Footer></Footer>
@@ -30,4 +22,4 @@ const HomeLayout = () => {
     );
 };
 
-export default HomeLayout;
+export default AppsLayout;

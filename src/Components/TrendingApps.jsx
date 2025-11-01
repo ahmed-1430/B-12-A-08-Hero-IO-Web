@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 
 const TrendingApps = () => {
     const { apps } = AllApps();
-    console.log(apps)
+    // console.log(apps)
     const [load, setLoad] = useState(true);
     const appsSlice = apps ? apps.slice(0, 8) : [];
     useEffect(() => {
