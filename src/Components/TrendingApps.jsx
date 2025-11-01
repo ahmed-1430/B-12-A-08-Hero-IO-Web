@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AllApps from '../CustomHook/CustomHook';
 import Loader from './Loader';
 import AppCard from './AppCard';
+import { Link } from 'react-router';
 
 const TrendingApps = () => {
     const { apps } = AllApps();
@@ -39,6 +40,9 @@ const TrendingApps = () => {
                         <p className="text-gray-500 text-lg">No products found</p>
                     </div>
                 )}
+            </div>
+            <div className="flex justify-center mt-8 pb-5">
+                <Link to="/apps"><button className="btn bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#5729CC] hover:to-[#8D55DD] text-white border-none hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl px-8 py-3 min-w-[140px]"> Show all </button></Link>
             </div>
         </div>
     );
