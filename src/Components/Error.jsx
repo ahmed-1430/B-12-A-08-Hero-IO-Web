@@ -1,5 +1,5 @@
 import React from 'react';
-import err from '../../assets/error-404.png'
+import err from '../assets/error-404.png'
 import { Link } from 'react-router';
 
 const Error = () => {

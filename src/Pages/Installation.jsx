@@ -121,13 +121,13 @@ const Installation = () => {
                       </h3>
                       <div className="flex flex-wrap mt-8">
                         <div className="flex">
-                          <img className="w-[20px] h-[20px]" src={dawnload} alt="" />
+                          <img className="w-5 h-5" src={dawnload} alt="" />
                           <span className="inline-block text-sm px-3 py-1">
                             {app.downloads}
                           </span>
                         </div>
                         <div className="flex items-center">
-                          <img className="w-[20px] h-[20px]" src={ratinf} alt="" />
+                          <img className="w-5 h-5" src={ratinf} alt="" />
                           <span className="inline-block text-sm px-3">
                             {app.ratingAvg}
                           </span>

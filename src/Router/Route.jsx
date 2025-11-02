@@ -7,6 +7,7 @@ import AppDetailsLayout from "../Layout/AppDetailsLayout";
 import AppDetails from "../Pages/AppDetails";
 import InstallationLayout from "../Layout/InstallationLayout";
 import Installation from "../Pages/Installation";
+import Error from "../Components/Error";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
                 element: <Installation></Installation>
             }
         ]
+    },
+    {
+        path: "*",
+        element: <Error></Error>
     }
 ]);
 
