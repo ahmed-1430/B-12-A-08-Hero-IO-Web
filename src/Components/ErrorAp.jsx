@@ -28,7 +28,7 @@ const ErrorAp = () => {
 
         <Link to='/'>
           <button 
-            className="bg-gradient-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#5729CC]  text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base md:text-lg font-medium w-full sm:w-auto transform hover:scale-105 shadow-lg"
+            className="bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#5729CC]  text-white px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg transition-all duration-300 text-sm sm:text-base md:text-lg font-medium w-full sm:w-auto transform hover:scale-105 shadow-lg"
             style={{
               background: 'linear-gradient(125.07deg, rgba(99, 46, 227, 1), rgba(159, 98, 242, 1) 100%)'
             }}
