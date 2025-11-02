@@ -5,9 +5,15 @@ Built with love 💙 and crafted to provide a smooth, intuitive, and engaging ex
 
 ---
 
+## 🔗 Live Demo  
+Check out the live version of the project here 👇  
+👉 [**Visit HERO.IO Live**](https://b12-a09-hero-io-web.web.app/)  
+
+---
+
 ## 🧩 Features  
 
-✨ **Responsive Design** – Works beautifully on all devices.  
+✨ **Responsive Design** – Works beautifully on all devices.  firebase deploy
 🧱 **Dynamic Layout** – Custom header, footer, and app cards with live data.  
 🔍 **Live Search** – Instantly find any app you’re looking for.  
 📈 **Interactive Charts** – Visualize app ratings and reviews with Recharts.  

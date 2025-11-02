@@ -19,10 +19,10 @@ const NavBar = () => {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> 
                             </svg>
                         </div>
-                        <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
-                            <li> <Link to={"/"} className={`${isActive('/') ? 'bg-blue-500 text-white' : ''}`}> Home </Link> </li>
-                            <li> <Link to={"/apps"} className={`${isActive('/apps') ? 'bg-blue-500 text-white' : ''}`}> Apps </Link> </li>
-                            <li> <Link to={"/installation"} className={`${isActive('/installation') ? 'bg-blue-500 text-white' : ''}`}> Installation </Link> </li>
+                        <ul tabIndex={-1} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-45 p-2 shadow">
+                            <li><Link to={"/"} className={` ${isActive('/') ? 'bg-slate-700 text-white hover:bg-slate-400' : ''}`}> Home </Link></li>
+                        <li><Link to={"/apps"} className={` ${isActive('/apps') ? 'bg-slate-700 text-white hover:bg-slate-400' : ''}`}> Apps </Link></li>
+                        <li><Link to={"/installation"} className={` ${isActive('/installation') ? 'bg-slate-700 text-white hover:bg-slate-400' : ''}`}> Installation </Link></li>
                         </ul>
                     </div>
                     <Link to={"/"} className="btn btn-ghost text-xl font-bold"> <img src={logo} className='h-10' alt="logo" /> HERO.IO </Link>

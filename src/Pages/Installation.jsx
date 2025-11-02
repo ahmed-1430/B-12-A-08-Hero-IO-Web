@@ -25,22 +25,19 @@ const Installation = () => {
     if (apps && apps.length > 0) {
       const installedAppIds = JSON.parse(localStorage.getItem("installedApps") || "[]");
       
-      // Filter the full apps array to get only installed apps
       const installedApps = apps.filter(app => 
         installedAppIds.includes(app.id)
       );
       
       setInstalledProducts(installedApps);
     }
-  }, [apps]); // This will re-run when apps data changes
+  }, [apps]); 
 
   const handleUninstall = (appId) => {
-    // Remove from localStorage
     const installedAppIds = JSON.parse(localStorage.getItem("installedApps") || "[]");
     const updatedAppIds = installedAppIds.filter(id => id !== appId);
     localStorage.setItem("installedApps", JSON.stringify(updatedAppIds));
     
-    // Remove from state
     const updatedProducts = installedProducts.filter(product => product.id !== appId);
     setInstalledProducts(updatedProducts);
     
@@ -48,14 +45,13 @@ const Installation = () => {
   };
 
   const sortedProducts = [...installedProducts].sort((a, b) => {
-    // Extract numeric value from size string (e.g., "25 MB" -> 25)
     const getSizeValue = (size) => {
       if (!size) return 0;
       const sizeNum = parseFloat(size);
       return isNaN(sizeNum) ? 0 : sizeNum;
     };
 
-    const sizeA = getSizeValue(a.mb || a.size); // Use mb or size property
+    const sizeA = getSizeValue(a.mb || a.size); 
     const sizeB = getSizeValue(b.mb || b.size);
 
     if (sortOrder === "high-to-low") {
@@ -73,7 +69,7 @@ const Installation = () => {
 
   return (
     <div className="min-h-screen bg-[#f5f5f5] py-8">
-      <div className="text-center mb-12">
+      <div className=" w-11/12 mx-auto text-center mb-12">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           Your Installed Apps
         </h1>
@@ -83,8 +79,8 @@ const Installation = () => {
       </div>
 
       <ToastContainer />
-      <div className="max-w-11/12 mx-auto px-4">
-        <div className="p-8">
+      <div className="max-w-11/12 mx-auto">
+        <div>
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center gap-4 mb-6">
             <h2 className="text-2xl font-bold text-gray-800 ">
               Your Apps ({installedProducts.length})
