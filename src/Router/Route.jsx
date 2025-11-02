@@ -5,6 +5,8 @@ import Apps from "../Pages/Apps";
 import AppsLayout from "../Layout/AppsLayout";
 import AppDetailsLayout from "../Layout/AppDetailsLayout";
 import AppDetails from "../Pages/AppDetails";
+import InstallationLayout from "../Layout/InstallationLayout";
+import Installation from "../Pages/Installation";
 
 const router = createBrowserRouter([
     {
@@ -35,7 +37,13 @@ const router = createBrowserRouter([
     },
     {
         path: "/installation",
-        element: <p>Installation</p>
+        element: <InstallationLayout></InstallationLayout>,
+        children: [
+            {
+                path: "",
+                element: <Installation></Installation>
+            }
+        ]
     }
 ]);
 

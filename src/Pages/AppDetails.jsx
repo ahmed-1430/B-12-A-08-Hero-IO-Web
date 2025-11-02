@@ -16,6 +16,7 @@ const AppDetails = () => {
     const { apps } = AllApps();
     const [load, setLoad] = useState(true);
     const [isInstalled, setIsInstalled] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -27,12 +28,22 @@ const AppDetails = () => {
             setIsInstalled(true);
         }
 
-        return () => clearTimeout(timer);
+        // Check if mobile
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener('resize', checkMobile);
+        };
     }, [id]);
 
     const app = apps?.find(p => p.id === parseInt(id));
 
-    // Format downloads function
     const formatDownloads = (count) => {
         if (!count && count !== 0) return '0';
         
@@ -92,46 +103,67 @@ const AppDetails = () => {
         count: rating.count
     })) || [];
 
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div className="bg-white p-3 border border-gray-300 rounded-lg shadow-lg">
+                    <p className="font-semibold text-gray-800">{label}</p>
+                    <p className="text-[#ff8811]">
+                        Count: <span className="font-bold">{payload[0].value}</span>
+                    </p>
+                </div>
+            );
+        }
+        return null;
+    };
+
     return (
         <div className='bg-[#f5f5f5]'>
             <ToastContainer />
             
-            <div className='max-w-11/12 mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-10 lg:pt-15 min-h-screen'>
-                <div className="rounded-lg overflow-hidden">
-                    
-                    <div className="flex flex-col md:flex-row gap-1 p-6 border-b border-gray-300">
-                        <div className="md:w-1/5 flex justify-center md:justify-start mb-6 md:mb-0 pb-6 md:pb-0 md:pr-0 ">
+            <div className='w-11/12 mx-auto px-4 py-8 min-h-screen'>
+                <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div className="flex flex-col lg:flex-row gap-6 p-6 border-b border-gray-200">
+                        <div className="flex justify-center lg:justify-start">
                             <img 
                                 src={image} 
                                 alt={title}
-                                className="w-64 h-64 object-cover rounded-lg"
+                                className="w-48 h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 object-cover rounded-2xl shadow-md"
                             />
                         </div>
 
-                        <div className="md:w-4/5 md:pl-6">
-                            <h1 className="text-3xl font-bold text-gray-800  pb-2">{title}</h1>
+                        <div className="flex-1 lg:pl-8">
+                            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2">{title}</h1>
                            
-                            <p className="text-lg text-[#6e38e6] mb-5 mt-1"><span className='text-[#696b6c]'>Developed by</span> {companyName}</p>
+                            <p className="text-lg text-[#6e38e6] mb-6">
+                                <span className='text-gray-600'>Developed by</span> {companyName}
+                            </p>
                             
-                           <p className='border-b w-full text-[#d1d5dc] '></p>
+                            <div className="border-b border-gray-200 mb-6"></div>
 
-                            <div className="flex items-center gap-15 mb-6 mt-5">
-                                <div className="flex flex-col  gap-1">
-                                    <img className='w-8' src={dawnload} alt="" />
-                                    <span className="text-sm text-gray-600">Downloads</span>
-                                    <span className="font-bold text-2xl">{formatDownloads(downloads)}</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                                        <img className='w-8 h-8' src={dawnload} alt="Downloads" />
+                                        <span className="text-sm font-medium text-gray-600">Downloads</span>
+                                    </div>
+                                    <span className="font-bold text-2xl text-gray-900 block">{formatDownloads(downloads)}</span>
                                 </div>
 
-                                <div className="flex flex-col  gap-1">
-                                     <img className='w-8' src={reting} alt="" />
-                                    <span className="text-sm text-gray-600">Average Ratings</span>
-                                    <span className="font-bold text-2xl">{ratingAvg} </span>
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                                        <img className='w-8 h-8' src={reting} alt="Ratings" />
+                                        <span className="text-sm font-medium text-gray-600">Average Rating</span>
+                                    </div>
+                                    <span className="font-bold text-2xl text-gray-900 block">{ratingAvg}</span>
                                 </div>
 
-                                <div className="flex flex-col  gap-1">
-                                    <img className='w-8' src={review} alt="" />
-                                    <span className="text-sm text-gray-600">Total Reviews:</span>
-                                    <span className="font-bold">{reviews}</span>
+                                <div className="text-center sm:text-left">
+                                    <div className="flex items-center justify-center sm:justify-start gap-3 mb-2">
+                                        <img className='w-8 h-8' src={review} alt="Reviews" />
+                                        <span className="text-sm font-medium text-gray-600">Total Reviews</span>
+                                    </div>
+                                    <span className="font-bold text-xl text-gray-900 block">{reviews}</span>
                                 </div>
                             </div>
 
@@ -140,62 +172,104 @@ const AppDetails = () => {
                                 disabled={isInstalled}
                                 className={`${
                                     isInstalled 
-                                        ? 'bg-[#22a57c] cursor-not-allowed' 
-                                        : 'bg-[#00d390] hover:bg-[#22a57c]'
-                                } text-white py-3 px-6 rounded-lg mb-6 transition duration-300 flex items-center justify-center gap-2`}
+                                        ? 'bg-green-600 cursor-not-allowed' 
+                                        : 'bg-linear-to-r from-[#632EE3] to-[#9F62F2] hover:from-[#5528c4] hover:to-[#8a52d9] cursor-pointer transform hover:scale-105'
+                                } text-white font-semibold py-4 px-8 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 w-full sm:w-auto shadow-lg`}
                             >
                                 {isInstalled ? (
                                     <>
+                                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                        </svg>
                                         Installed
                                     </>
                                 ) : (
-                                    `Install Now (${mb})`
+                                    `Install Now (${mb} MB)`
                                 )}
                             </button>
                         </div>
                     </div>
                     
-                    <div className="p-6 border-b border-gray-300">
-                        <h3 className="text-xl font-bold mb-3 text-gray-800">Rating Distribution</h3>
+                    <div className="p-6 border-b border-gray-200">
+                        <h3 className="text-xl sm:text-2xl font-bold mb-6 text-gray-900">Rating Distribution</h3>
                         
-                        <ResponsiveContainer width="100%" height={400}>
-                            <BarChart
-                                layout="vertical"
-                                data={chartData}
-                                margin={{ top: 20, right: 30, left: 100, bottom: 5 }}
-                            >
-                                <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-                                <XAxis 
-                                    type="number" 
-                                    stroke="#666"
-                                />
-                                <YAxis 
-                                    type="category" 
-                                    dataKey="name" 
-                                    stroke="#666"
-                                    width={80}
-                                />
-                                <Tooltip 
-                                    wrapperStyle={{ 
-                                        backgroundColor: '#f5f5f5',
-                                        border: '1px solid #d5d5d5',
-                                        borderRadius: 3
-                                    }} 
-                                />
-                                <Legend />
-                                <Bar 
-                                    dataKey="count" 
-                                    fill="#ff8811" 
-                                    barSize={30}
-                                    name="Rating Count"
-                                />
-                            </BarChart>
-                        </ResponsiveContainer>
+                        <div className="w-full h-[400px] sm:h-[450px] lg:h-[500px]">
+                            <ResponsiveContainer width="100%" height="100%">
+                                <BarChart
+                                    data={chartData}
+                                    margin={{
+                                        top: 20,
+                                        right: isMobile ? 10 : 30,
+                                        left: isMobile ? 10 : 20,
+                                        bottom: isMobile ? 30 : 50,
+                                    }}
+                                    barSize={isMobile ? 35 : 45}
+                                >
+                                    <CartesianGrid 
+                                        strokeDasharray="3 3" 
+                                        stroke="#e5e7eb" 
+                                        vertical={false}
+                                    />
+                                    <XAxis 
+                                        dataKey="name" 
+                                        stroke="#6b7280"
+                                        tick={{
+                                            fontSize: isMobile ? 11 : 14,
+                                            fill: '#6b7280'
+                                        }}
+                                        axisLine={false}
+                                        tickLine={false}
+                                        angle={isMobile ? -45 : 0}
+                                        textAnchor={isMobile ? "end" : "middle"}
+                                        height={isMobile ? 80 : 60}
+                                    />
+                                    <YAxis 
+                                        stroke="#6b7280"
+                                        tick={{
+                                            fontSize: isMobile ? 11 : 14,
+                                            fill: '#6b7280'
+                                        }}
+                                        axisLine={false}
+                                        tickLine={false}
+                                        width={isMobile ? 40 : 60}
+                                    />
+                                    <Tooltip 
+                                        content={<CustomTooltip />}
+                                        cursor={{ fill: 'rgba(0, 211, 144, 0.1)' }}
+                                    />
+                                    <Legend 
+                                        verticalAlign="top"
+                                        height={36}
+                                        iconType="circle"
+                                        iconSize={10}
+                                        wrapperStyle={{
+                                            fontSize: isMobile ? '12px' : '14px',
+                                            paddingBottom: '20px'
+                                        }}
+                                    />
+                                    <Bar 
+                                        dataKey="count" 
+                                        name="Number of Ratings"
+                                        fill="url(#colorCount)"
+                                        radius={[4, 4, 0, 0]}
+                                        className="hover:opacity-80 transition-opacity"
+                                    />
+                                    <defs>
+                                        <linearGradient id="colorCount" x1="0" y1="0" x2="0" y2="1">
+                                            <stop offset="0%" stopColor="#ff8811" stopOpacity={0.8}/>
+                                            <stop offset="100%" stopColor="#ff8811" stopOpacity={0.4}/>
+                                        </linearGradient>
+                                    </defs>
+                                </BarChart>
+                            </ResponsiveContainer>
+                        </div>
                     </div>
 
                     <div className="p-6">
-                        <h3 className="text-xl font-bold mb-3 text-gray-800">Description</h3>
-                        <p className="text-gray-700 text-lg leading-relaxed">{description}</p>
+                        <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900">Description</h3>
+                        <p className="text-gray-700 text-lg leading-relaxed bg-gray-50 p-6 rounded-lg border border-gray-200">
+                            {description}
+                        </p>
                     </div>
                 </div>
             </div>
